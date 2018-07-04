@@ -6,7 +6,56 @@
     <title>Just Being Paid | Create An Account</title>
     <link rel="stylesheet" type="text/css" href="/page-includes/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/page-includes/css/fonts-and-labels.css">
+
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        input {
+            padding: 10px;
+            width: 100%;
+            font-size: 17px;
+        }
+
+        /* Hide all steps by default: */
+
+        .tab {
+            display: none;
+        }
+
+        button {
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+
+        /* Make circles that indicate the steps of the form: */
+
+        .step {
+            height: 12px;
+            width: 12px;
+            margin: 0 8px;
+            background-color: #c5c5c5;
+            border: none;
+            border-radius: 10px;
+            display: inline-block;
+            opacity: 0.5;
+        }
+
+        .step.active {
+            opacity: 1;
+        }
+
+        /* Mark the steps that are finished and valid: */
+
+        .step.finish {
+            background-color: #00796b;
+        }
+
         body,
         div.slide-out-menu {
             display: flex;
@@ -19,76 +68,69 @@
         }
 
         body {
-            background: #fafafa;
+            background: #c5c5c5;
         }
 
-        .input-field input {
-            border-bottom: none !important;
-            color: white;
-        }
-
-        div.progress {
-            width: inherit;
-            position: relative;
-            margin: -32px -50px;
-            color: #00695c;
-            background: #fafafa;
-            z-index: 900;
-            display: none;
-        }
-
-        div.progress .indeterminate {
-            color: #fafafa;
-            background: #00695c;
+        .header-logo {
+            margin-top: 20px;
         }
 
         .form-container {
             overflow: hidden;
             border-radius: 4px;
             display: inline-block;
-            padding: 32px 48px 0px 48px;
-        }
-
-        div.error {
-            position: relative;
-            margin: -32px -60px 10px -60px;
-            padding: 8px !important;
-            max-width: 500px;
-            height: auto;
-            color: white;
-            word-wrap: break-word;
-            display: none;
+            margin: 0 auto;
+            text-align: left;
+            padding: 0px 18px;
         }
 
         .m {
-            font-size: 2.4em;
+            font-size: 2.8em;
             margin-top: 1em;
+            margin-bottom: -1em !important;
             z-index: 9999;
         }
 
-
-        @media (min-width:320px) {
+        @media (min-width:320px and max-width: 480px) {
             /* smartphones, iPhone, portrait 480x320 phones */
+            body {
+                background: #f5f5f5;
+            }
         }
 
-        @media (min-width:481px) {
+        @media (min-width:481px and max-width: 640px) {
             /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+            body {
+                background: #f5f5f5;
+            }
         }
 
-        @media (min-width:641px) {
+        @media (min-width:641px and max-width:900px) {
             /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+            body {
+                background: #f5f5f5;
+            }
         }
 
-        @media (min-width:961px) {
+        @media (min-width:961px and max-width: 1024px) {
             /* tablet, landscape iPad, lo-res laptops ands desktops */
+            .form-container {
+                min-width: 84%;
+            }
         }
 
-        @media (min-width:1025px) {
+        @media (min-width:1025px and max-width:1280px) {
             /* big landscape tablets, laptops, and desktops */
+            .form-container {
+                min-width: 78%;
+            }
         }
 
         @media (min-width:1281px) {
             /* hi-res laptops and desktops */
+            .form-container {
+                min-width: 70%;
+            }
         }
 
     </style>
@@ -96,11 +138,11 @@
 
 <body>
     <header>
-        
-    <div class="container">
-        <div class="row">
-            <div class="col l6 m8 s10 hide-on-large-only">
-                <!-- Slide  Out Menu For Mobile -->
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col l1 offset-l2 m1 offset-m1 s2 offset-s1">
+                    <!-- Slide  Out Menu For Mobile -->
                     <ul id="slide-out" class="sidenav">
                         <li>
                             <div class="user-view">
@@ -119,87 +161,245 @@
                         </li>
                         <li><a class="subheader">Subheader</a></li>
                         <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-                        
+
                     </ul>
-                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons m teal-text text-darken-3">menu</i></a>
+                    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons m teal-text text-darken-3">menu</i></a>
+
+                </div>
+                <div class="col l6 m8 s6">
+
+                    <!-- Header Logo -->
+                    <center>
+                        <img class=" responsive-img header-logo" src="/page-includes/img/header-logo.png" width="180px" />
+                    </center>
+                </div>
             </div>
-        </div>
         </div>
 
     </header>
     <main>
-        <center>
-            <!-- Header Logo -->
-            <img class="responsive-img hide-on-small-only" style="width: 250px;" src="/page-includes/img/header-logo.png" />
-            <!-- Main Container -->
-            <div class="container">
-                <!-- Form Container -->
-                <div class="z-depth-3 teal darken-3 row form-container">
-                    <!-- Progress Bar -->
-                    <div class="progress">
-                        <div class="indeterminate"></div>
-                    </div>
-                    <!-- Login Form -->
-                    <form class="col s12" method="post" name="LoginForm" id="LoginForm">
-                        <div class="error red darken-2">The email you entered doesn't exist. Please try again.The email you entered doesn't exist. Please try again.The email you entered doesn't exist. Please try again.</div>
-                        <!-- Email Field -->
-                        <div class='row'>
-                            <div class='input-field col s12'>
-                                <i class="material-icons prefix">account_circle</i>
-                                <input class='validate' type='email' name='email' id='email' required/>
-                                <label for='email'>Enter your email</label>
+        <div class="row">
+            <div class="col s12 center-align">
+                <div class="z-depth-4 card form-container">
+                    <form method='post' name="sign-up-form" id="sign-up-form">
+                        <div class="card-content">
+                            <!-- One "tab" for each step in the form: -->
+
+                            <!-- Personal Information -->
+                            <div class="tab">
+
+                                <h5>Personal Info</h5>
+
+                                <!-- Full Name -->
+                                <div class="row">
+
+                                    <!-- First Name -->
+                                    <div class="input-field col m6 s12">
+                                        <input class="validate" id="first-name" name="first-name" type="text" required/>
+                                        <label for="first-name">First Name</label>
+                                        <span class="helper-text" data-error="Please Tell us your First Name"></span>
+                                    </div>
+
+                                    <!-- Other Names -->
+                                    <div class="input-field col m6 s12">
+                                        <input class="validate" id="other-names" name="other-names" type="text" required/>
+                                        <label for="other-names">Other Names</label>
+                                        <span class="helper-text" data-error="We need to know your Other Names"></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <!-- Gender -->
+                                    <div class="input-field col m6 s12">
+                                        <select id="gender" name="gender" required class="validate">
+                                              <option value="Male">Male</option>
+                                              <option value="Female">Female</option>
+                                              <option value="N/A">Prefer Not To Say</option>
+                                            </select>
+                                        <label for="gender">Gender</label>
+                                        <span class="helper-text" data-error="We need to know your Gender"></span>
+                                    </div>
+
+                                    <!-- Date of Birth -->
+                                    <div class="col m6 s12">
+                                        <div class="input-field col m4 s4">
+                                            <input placeholder="DD" id="day-of-birth" name="day-of-birth" type="text" maxlength="2" class="inputs validate" required/>
+                                            <label for="day-of-birth">Day of Birth</label>
+                                            <span class="helper-text" data-error="Day?"></span>
+                                        </div>
+                                        <div class="input-field col m4 s4">
+                                            <input placeholder="MM" id="month-of-birth" name="month-of-birth" type="text" maxlength="2" class="inputs validate" required/>
+                                            <label for="month-of-birth">Month of Birth</label>
+                                            <span class="helper-text" data-error="Month?"></span>
+                                        </div>
+                                        <div class="input-field col m4 s4">
+                                            <input placeholder="YYYY" id="year-of-birth" name="year-of-birth" type="text" maxlength="4" class="inputs validate" required/>
+                                            <label for="year-of-birth">Year of Birth</label>
+                                            <span class="helper-text" data-error="Year?"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contact Information -->
+                            <div class="tab">
+                                <h5>Contact Info</h5>
+
+                                <div class="row">
+
+                                    <!-- Email Address -->
+                                    <div class="input-field col l8 m7 s12">
+                                        <input id="user-email" class="validate" name="user-email" type="email" required/>
+                                        <label for="user-email">Email Address</label>
+                                        <span class="helper-text" data-error="Please provide an Email Address"></span>
+
+                                    </div>
+
+                                    <!-- Phone Number -->
+                                    <div class="input-field col l4 m5 s12">
+                                        <input id="phone-number" class="inputs validate" name="phone-number" type="text" required/>
+                                        <label for="phone-number">Phone Number</label>
+                                        <span class="helper-text" data-error="Phone Number?"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bank & Verification Details -->
+                            <div class="tab">
+                                <h5>Bank &amp; Verification Details</h5>
+
+                                <div class="row">
+                                    <!-- Account Name -->
+                                    <div class="input-field col l5 m5 s12">
+                                        <input id="account-name" class="validate" name="account-name" type="text" />
+                                        <label for="account-name">Account Name</label>
+                                        <span class="helper-text" data-error="Please tell us your Account Name"></span>
+                                    </div>
+
+                                    <!-- Account Type -->
+                                    <div class="input-field col l4 m4 s12">
+                                        <select id="account-type" class="validate" name="account-type">
+                                              <option value="MTN MoMo">MTN Mobile Money</option>
+                                              <option value="Vodafone Cash">Vodafone Cash</option>
+                                              <option value="Tigo Cash">Tigo Cash</option>
+                                              <option value="Airtel Money">Airtel Money</option>
+                                            </select>
+                                        <label for="account-type">Account Type</label>
+                                        <span class="helper-text" data-error="You should select one of these"></span>
+                                    </div>
+
+                                    <!-- Account Number -->
+                                    <div class="input-field col l3 m3 s12">
+                                        <input id="account-number" class="inputs validate" name="account-number" type="text" />
+                                        <label for="account-number">Account Number</label>
+                                        <span class="helper-text" data-error="What is your Account's Number"></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <!-- ID Type -->
+                                    <div class="input-field col l6 m6 s12">
+                                        <select id="id-type" name="id-type" required class="validate">
+                                              <option value="Voter Card">Voters' ID</option>
+                                              <option value="NHIS">National Health Insurance Card</option>
+                                              <option value="Driver\'s License">Driving License</option>
+                                              <option value="Passport">Passport</option>
+                                            </select>
+                                        <label for="id-type">ID Type</label>
+                                        <span class="helper-text" data-error="Please select an ID type"></span>
+                                    </div>
+
+                                    <!-- ID Number -->
+                                    <div class="input-field col l6 m6 s12">
+                                        <input id="id-number" class="validate" name="id-number" type="text" />
+                                        <label for="id-number">ID Number</label>
+                                        <span class="helper-text" data-error="We need your ID's number"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Login Details -->
+                            <div class="tab">
+                                <h5>Login Details</h5>
+                                <div class="row">
+
+                                    <!-- Custome ID -->
+                                    <div class="input-field col l5 m5 s12">
+                                        <input id="customer-id" name="customer-id" type="text" readonly/>
+                                        <label for="customer-id">Customer ID</label>
+                                    </div>
+
+                                    <!-- Username -->
+                                    <div class="input-field col l7 m7 s12">
+                                        <input id="user-name" class="validate" name="user-name" type="text" />
+                                        <label for="user-name">Username</label>
+                                        <span class="helper-text" data-error="You'll need a Username"></span>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+                                    <!-- Password -->
+                                    <div class="input-field col l6 m6 s12">
+                                        <input id="pasword-field" class="validate" name="password-field" type="password" />
+                                        <label for="password-field">Password</label>
+                                        <span class="helper-text" data-error="You'll need to choose a Password"></span>
+                                    </div>
+
+                                    <!-- Confirm Password -->
+                                    <div class="input-field col l6 m6 s12">
+                                        <input id="confirm-password-field" class="validate" name="confirm-password-field" type="password" />
+                                        <label for="confirm-password-field">Confirm Password</label>
+                                        <span class="helper-text" data-error="Passwords do not match"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="center">
+                                <div class="row" style="overflow:auto;">
+                                    <div class="col s6">
+                                        <button type="button" class="btn red waves-effect waves-dark" id="prevBtn" onclick="nextPrev(-1)">
+                                           Back<i class="material-icons left">chevron_left</i>
+                                        </button>
+                                    </div>
+                                    <div class="col s6">
+                                        <button type="button" name="btn-register" class="btn teal darken-2 waves-effect waves-dark" id="nextBtn" onclick="nextPrev(1)">
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- Circles which indicates the steps of the form: -->
+                                <div style="text-align:center;margin-top:20px;">
+                                    <span class="step"></span>
+                                    <span class="step"></span>
+                                    <span class="step"></span>
+                                    <span class="step"></span>
+                                </div>
                             </div>
                         </div>
-                        <!-- Password Field -->
-                        <div class='row'>
-                            <div class='input-field col s12'>
-                                <i class="material-icons prefix">lock</i>
-                                <input class='validate' type='password' name='password' id='password' required/>
-                                <label for='password'>Enter your password</label>
-                            </div>
-                            <label name="forgot" style='float: right;'>
-								<a class='amber-text' href='#!'><big>Forgot Password?</big></a>
-							</label>
-                        </div>
-                        <br />
-                        <center>
-                            <div class='row'>
-                                <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect white teal-text text-darken-3'>Login</button>
-                            </div>
-                        </center>
                     </form>
                 </div>
             </div>
-            <a href="/sign-up/" class="hide-on-med-and-down">Create Account</a>
-        </center>
-        <div class="section"></div>
-        <div class="section"></div>
-        <div class="section"></div>
+        </div>
     </main>
-   
+
     <!-- Page Footer -->
-    <footer class="page-footer teal darken-3 hide-on-small-only">
+    <footer class="page-footer teal darken-2">
         <div class="container">
             <div class="row"></div>
         </div>
         <div class="footer-copyright">
             <div class="container center">
-                &copy; 2018 | Made with <i class="material-icons"></i> by
+                &copy; 2018 | Made with <i class="tiny material-icons">favorite</i> by
                 <a class="grey-text text-lighten-4" href="#!">Webbing Creatives</a>
             </div>
         </div>
     </footer>
+
     <!-- Scripts -->
     <script type="text/javascript" src="/page-includes/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="/page-includes/js/materialize.min.js"></script>
-    <script type="text/javascript">
-        M.AutoInit();
-
-    </script>
-</body>
-
-</html>
-
+    <script type="text/javascript" src="/page-includes/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/page-includes/files/sign-up.js"></script>
 </body>
 
 </html>

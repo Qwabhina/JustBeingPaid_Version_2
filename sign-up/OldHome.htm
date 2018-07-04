@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Just Being Paid | Create An Account</title>
+    <link rel="stylesheet" type="text/css" href="/page-includes/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/page-includes/css/materialize-stepper.min.css">
+    <link rel="stylesheet" type="text/css" href="/page-includes/css/fonts-and-labels.css">
+
+    <style>
+        body,
+        div.slide-out-menu {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
+        body {
+            background: #c5c5c5;
+        }
+
+        .input-field input {
+            border-bottom: none !important;
+            color: white;
+        }
+
+        ul.stepper.horizontal {
+            min-height: 398px !important;
+        }
+
+        ul.stepper .step.active::before,
+        ul.stepper .step.done::before,
+        ul.stepper.horizontal .step.active .step-title::before,
+        ul.stepper.horizontal .step.done .step-title::before {
+            background-color: #00796b !important;
+        }
+
+        .header-logo {
+            min-width: 180px;
+        }
+
+        .form-container {
+            overflow: hidden;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 0 auto;
+            text-align: left;
+            padding: 0px 18px;
+        }
+
+        .m {
+            font-size: 2.4em;
+            margin-top: 1em;
+            z-index: 9999;
+        }
+
+
+        @media (min-width:320px and max-width: 480px) {
+            /* smartphones, iPhone, portrait 480x320 phones */
+            body {
+                background: #f5f5f5;
+            }
+        }
+
+        @media (min-width:481px and max-width: 640px) {
+            /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+            body {
+                background: #f5f5f5;
+            }
+        }
+
+        @media (min-width:641px and max-width:900px) {
+            /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+            body {
+                background: #f5f5f5;
+            }
+        }
+
+        @media (min-width:961px and max-width: 1024px) {
+            /* tablet, landscape iPad, lo-res laptops ands desktops */
+            .form-container {
+                min-width: 100%;
+            }
+        }
+
+        @media (min-width:1025px and max-width:1280px) {
+            /* big landscape tablets, laptops, and desktops */
+            .form-container {
+                min-width: 100%;
+            }
+        }
+
+        @media (min-width:1281px) {
+            /* hi-res laptops and desktops */
+            .header-logo {
+                width: 210px;
+            }
+            .form-container {
+                min-width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+
+        <div class="container">
+            <div class="row">
+                <div class="col l6 m8 s10 hide-on-large-only">
+                    <!-- Slide  Out Menu For Mobile -->
+                    <ul id="slide-out" class="sidenav">
+                        <li>
+                            <div class="user-view">
+                                <div class="background">
+                                    <img src="/page-includes/img/header-logo.png">
+                                </div>
+                                <a href="#user"><img class="circle" src="/page-includes/img/android-chrome-512x512.png"></a>
+                                <a href="#name"><span class="white-text name">John Doe</span></a>
+                                <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                            </div>
+                        </li>
+                        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+                        <li><a href="#!">Second Link</a></li>
+                        <li>
+                            <div class="divider"></div>
+                        </li>
+                        <li><a class="subheader">Subheader</a></li>
+                        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+
+                    </ul>
+                    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons m teal-text text-darken-3">menu</i></a>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <main>
+        <center>
+            <!-- Header Logo -->
+            <img class="responsive-img hide-on-small-only header-logo" src="/page-includes/img/header-logo.png" />
+            <div class="row">
+                <div class="col l8 m10 s12 offset-l2 offset-m1">
+                    <div class="card form-container">
+                        <div class="card-content">
+                            <ul class="stepper parallel horizontal">
+                                <li class="step active">
+                                    <div data-step-label="There's labels too!" class="step-title waves-effect waves-dark">Step 1</div>
+                                    <div class="step-content">
+                                        <div class="row">
+                                            <div class="input-field col l4 m4 s12">
+                                                <input name="first-name" type="text" class="validate" required>
+                                                <label for="email">First Name</label>
+                                            </div>
+                                            <div class="input-field col l4 m4 s12">
+                                                <input name="email" type="email" class="validate" required>
+                                                <label for="email">Other Names</label>
+                                            </div>
+                                        </div>
+                                        <div class="step-actions">
+                                            <button class="waves-effect waves-dark btn teal next-step">CONTINUE</button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="step">
+                                    <div class="step-title waves-effect waves-dark">Step 2</div>
+                                    <div class="step-content">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input id name="password" type="password" class="validate" required>
+                                                <label for="password">Your password</label>
+                                            </div>
+                                        </div>
+                                        <div class="step-actions">
+                                            <button class="waves-effect waves-dark btn teal next-step">CONTINUE</button>
+                                            <button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="step">
+                                    <div class="step-title waves-effect waves-dark">Step 3</div>
+                                    <div class="step-content">
+                                        Finish!
+                                        <div class="step-actions">
+                                            <button class="waves-effect waves-dark btn blue" type="submit">SUBMIT</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </center>
+    </main>
+
+    <!-- Page Footer -->
+    <footer class="page-footer teal darken-3 hide-on-small-only">
+        <div class="container">
+            <div class="row"></div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container center">
+                &copy; 2018 | Made with <i class="material-icons"></i> by
+                <a class="grey-text text-lighten-4" href="#!">Webbing Creatives</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="/page-includes/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/page-includes/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/page-includes/js/materialize-stepper.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            M.AutoInit();
+            $('.stepper').activateStepper();
+        });
+
+    </script>
+</body>
+
+</html>

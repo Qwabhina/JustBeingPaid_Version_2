@@ -1,16 +1,9 @@
-<!-- ?php 
-   /* include_once("/libraries/functions.php");
-    if(is_logged_in()){
-        header("location: /dashboard");
-    }
-    else{*/
-? -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Just Being Paid | Sign In</title>
+    <title>Match Pledges</title>
     <link rel="stylesheet" type="text/css" href="/page-includes/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/page-includes/css/fonts-and-labels.css">
     <style>
@@ -25,8 +18,13 @@
             flex: 1 0 auto;
         }
 
-        .header-logo {
-            margin-top: 20px;
+        body {
+            background: #fafafa;
+        }
+
+        .input-field input {
+            border-bottom: none !important;
+            color: white;
         }
 
         div.progress {
@@ -34,13 +32,13 @@
             position: relative;
             margin: -32px -50px;
             color: #00695c;
-            background: #c5c5c5;
+            background: #fafafa;
             z-index: 900;
             display: none;
         }
 
         div.progress .indeterminate {
-            color: #c5c5c5;
+            color: #fafafa;
             background: #00695c;
         }
 
@@ -63,9 +61,8 @@
         }
 
         .m {
-            font-size: 2.8em;
+            font-size: 2.4em;
             margin-top: 1em;
-            margin-bottom: -1em !important;
             z-index: 9999;
         }
 
@@ -92,20 +89,18 @@
 
         @media (min-width:1281px) {
             /* hi-res laptops and desktops */
-            #login-form {
-                min-width: 60%;
-            }
         }
 
     </style>
 </head>
 
-<body class="grey lighten-1">
+<body>
     <header>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col l1 offset-l2 m1 offset-m1 s2 offset-s1">
-                    <!-- Slide  Out Menu For Mobile -->
+        
+    <div class="container">
+        <div class="row">
+            <div class="col l6 m8 s10 hide-on-large-only">
+                <!-- Slide  Out Menu For Mobile -->
                     <ul id="slide-out" class="sidenav">
                         <li>
                             <div class="user-view">
@@ -124,35 +119,29 @@
                         </li>
                         <li><a class="subheader">Subheader</a></li>
                         <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-
+                        
                     </ul>
-                    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons m teal-text text-darken-3">menu</i></a>
-
-                </div>
-                <div class="col l6 m8 s6">
-
-                    <!-- Header Logo -->
-                    <center>
-                        <img class=" responsive-img header-logo" src="/page-includes/img/header-logo.png" width="180px" />
-                    </center>
-                </div>
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons m teal-text text-darken-3">menu</i></a>
             </div>
         </div>
+        </div>
+
     </header>
     <main>
         <center>
-            <div class="section"></div>
+            <!-- Header Logo -->
+            <img class="responsive-img hide-on-small-only" style="width: 250px;" src="/page-includes/img/header-logo.png" />
             <!-- Main Container -->
             <div class="container">
                 <!-- Form Container -->
-                <div class="z-depth-4 white row form-container">
+                <div class="z-depth-3 teal darken-3 row form-container">
                     <!-- Progress Bar -->
                     <div class="progress">
                         <div class="indeterminate"></div>
                     </div>
                     <!-- Login Form -->
-                    <form class="col s12" method="post" name="login-form" id="login-form">
-                        <div class="error red darken-2"></div>
+                    <form class="col s12" method="post" name="LoginForm" id="LoginForm">
+                        <div class="error red darken-2">The email you entered doesn't exist. Please try again.The email you entered doesn't exist. Please try again.The email you entered doesn't exist. Please try again.</div>
                         <!-- Email Field -->
                         <div class='row'>
                             <div class='input-field col s12'>
@@ -168,19 +157,23 @@
                                 <input class='validate' type='password' name='password' id='password' required/>
                                 <label for='password'>Enter your password</label>
                             </div>
+                            <label name="forgot" style='float: right;'>
+								<a class='amber-text' href='#!'><big>Forgot Password?</big></a>
+							</label>
                         </div>
                         <br />
                         <center>
                             <div class='row'>
-                                <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect teal white-text darken-2'>Login</button>
+                                <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect white teal-text text-darken-3'>Login</button>
                             </div>
                         </center>
                     </form>
                 </div>
             </div>
+            <a href="/sign-up/" class="hide-on-med-and-down">Create Account</a>
         </center>
     </main>
-
+   
     <!-- Page Footer -->
     <footer class="page-footer teal darken-3 hide-on-small-only">
         <div class="container">
@@ -188,12 +181,11 @@
         </div>
         <div class="footer-copyright">
             <div class="container center">
-                &copy; 2018 | Made with <i class="tiny material-icons">favorite</i> by
+                &copy; 2018 | Made with <i class="material-icons"></i> by
                 <a class="grey-text text-lighten-4" href="#!">Webbing Creatives</a>
             </div>
         </div>
     </footer>
-
     <!-- Scripts -->
     <script type="text/javascript" src="/page-includes/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="/page-includes/js/materialize.min.js"></script>
@@ -204,5 +196,3 @@
 </body>
 
 </html>
-
-<!-- ?php // } ? -->
